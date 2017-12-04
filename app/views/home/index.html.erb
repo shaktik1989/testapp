@@ -1,0 +1,34 @@
+<div ng-controller="postsCtrl">
+  <div class="col-md-12">
+      <div class="col-md-12" style="padding:20px;">
+        <h1>All Posts</h1>
+        <table class="table" style="border:1px solid #d4d4d4;">
+          <thead>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(index, post) in posts.list">
+              <td>{{post.title}}</td>
+              <td>{{post.description}}</td>
+              <td>
+              <td>
+                <button data-router="article" class="btn btn-success" ng-click="edit_post(post, index)">Edit</button>
+                <button data-router="article" class="btn btn-danger" ng-click="delete_post(post, index)">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="text" ng-model="newpost.title" /></td>
+              <td><input type="text" ng-model="newpost.description" /></td>
+              <td>
+                <button class="btn btn-success" ng-click="create_update_post()">{{cu_button_text}}</button>
+                <button class="btn btn-success" ng-click="clear_post_fields()">Clear</button>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+  </div>
+</div>
